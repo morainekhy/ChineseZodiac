@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinese Zodiac</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>The Eternal Guardians: Your Destiny Awaits</h1>
+  <h3>Find Your Chinese Zodiac</h3>
+
+  <div class="intro-box">
+    <p>
+      Long ago, in the glow of ancient moonlight, the Jade Emperor summoned twelve creatures to race across river and land. Their place in the great cycle would define the essence of time. Ever since, the stars have whispered their stories through the turning years. <br><br>
+      Do you wish to know which guardian spirit watched over the year you were born? Step forward — the signs await.
+    </p>
+  </div>
+
+  <input type="number" id="month" placeholder="Birth Month" min="1" max="12" />
+  <input type="number" id="date" placeholder="Birth Date" min="1" max="31" />
+  <input type="number" id="year" placeholder="Birth Year" min="1900" max="2100" />
+  <br />
+  <button onclick="submitZodiac()">Discover</button>
+
+  <script>
+    function submitZodiac() {
+      const month = document.getElementById("month").value;
+      const date = document.getElementById("date").value;
+      const year = parseInt(document.getElementById("year").value); 
+  
+      if (!month || !date || !year) {
+        alert("Please fill in all fields.");
+        return;
+      }
+  
+      if (isNaN(year) || year < 1900 || year > 2100) {
+        alert("Please enter a valid birth year between 1900 and 2100.");
+        return;
+      }
+  
+      // All inputs are valid, proceed to redirect
+      window.location.href = `discover.html?year=${year}`;
+    }
+  </script>  
+</body>
+</html>
