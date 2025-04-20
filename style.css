@@ -108,3 +108,31 @@ button:hover {
   color: #005499;
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .zodiac-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .zodiac-image {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  .zodiac-text {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .zodiac-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .zodiac-text p {
+    font-size: 1rem;
+  }
+}
