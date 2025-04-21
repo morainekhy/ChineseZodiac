@@ -19,38 +19,31 @@
   </div>
 
   <input type="number" id="month" placeholder="Birth Month (1-12)" min="1" max="12" />
-  <input type="number" id="date" placeholder="Birth Date (1-28/29)" min="1" max="31" />
+  <input type="number" id="date" placeholder="Birth Date (1-31)" min="1" max="31" />
   <input type="number" id="year" placeholder="Birth Year (1900-2100)" min="1900" max="2100" />
   <br />
   <button onclick="submitZodiac()">Discover</button>
 
-  <script>
-  function submitZodiac() {
-    const month = parseInt(document.getElementById("month").value);
-    const date = parseInt(document.getElementById("date").value);
-    const year = parseInt(document.getElementById("year").value); 
-
-    if (!month || !date || !year) {
-      alert("Please fill in all fields.");
-      return;
+<script>
+    function submitZodiac() {
+      const month = document.getElementById("month").value;
+      const date = document.getElementById("date").value;
+      const year = parseInt(document.getElementById("year").value); 
+  
+      if (!month || !date || !year) {
+        alert("Please fill in all fields.");
+        return;
+      }
+  
+      if (isNaN(year) || year < 1900 || year > 2100) {
+        alert("Please enter a valid birth year between 1900 and 2100.");
+        return;
+      }
+  
+      // All inputs are valid, proceed to redirect
+      window.location.href = `discover.html?year=${year}`;
     }
-
-    if (isNaN(year) || year < 1900 || year > 2100) {
-      alert("Please enter a valid birth year between 1900 and 2100.");
-      return;
-    }
-
-    const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-    const daysInMonth = [31, (isLeapYear ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-    if (month < 1 || month > 12 || date < 1 || date > daysInMonth[month - 1]) {
-      alert("Please enter a valid date.");
-      return;
-    }
-
-    // All inputs are valid, proceed to redirect
-    window.location.href = `discover.html?year=${year}`;
-  }
-        </script>
+  </script>  
+  
 </body>
 </html>
