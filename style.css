@@ -3,6 +3,10 @@ body {
   text-align: center;
   margin-top: 60px;
   background-color: #f9f9f9;
+  background-image: url('https://images.app.goo.gl/cW2ht');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 input, button {
