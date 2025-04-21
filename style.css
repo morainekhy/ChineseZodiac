@@ -1,9 +1,8 @@
 body {
-body {
-font-family: Arial, sans-serif;
-text-align: center;
-margin-top: 60px;
-background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 60px;
+  background-color: #f9f9f9;
 }
 
 input, button {
@@ -136,4 +135,4 @@ button:hover {
   .zodiac-text p {
     font-size: 1rem;
   }
-}
+  }
